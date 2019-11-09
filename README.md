@@ -32,3 +32,7 @@ Dark Sky API([https://darksky.net/dev](https://darksky.net/dev))から取得し�
 - Slack+Google Apps Scriptで天気予報を作ろう
 
   (https://qiita.com/juginon/items/7413e1ddea4f14533c40)
+
+- [GAS]平日は毎朝スプレッドシートのテンプレからコピーを作成する
+
+  (https://qiita.com/tommy_aka_jps/items/e726df27a9a807e828bb)
