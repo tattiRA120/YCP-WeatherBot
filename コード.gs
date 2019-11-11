@@ -20,6 +20,7 @@ function weatherInfo() {
   var text = "";
   var dailyData = json["daily"]["data"][0];
   var hourlyData = json["hourly"]["data"][0];
+  var icon;
   
   text += "*【" + unixTime2jst(hourlyData.time, "mdh") + ":00 の 天気予報】*\n\n";
   text += "・今日の天気: " + dailyData.summary + "\n";
@@ -27,8 +28,21 @@ function weatherInfo() {
   
   for(var i = 0; i < 12; i += 3){
     hourlyData = json["hourly"]["data"][i];
+    if(hourlyData.summary == "晴れ"){
+      icon = ":sunny:"
+    }else if(hourlyData.summary == "曇り"){
+      icon = ":cloud:"
+    }else if(hourlyData.summary == "薄曇り"){
+      icon = ":partly_sunny:"
+    }else if(hourlyData.summary == "曇"){
+      icon = ":cloud:"
+    }else if(hourlyData.summary == "雨"){
+      icon = ":umbrella:"
+    }else{
+      icon = ""
+    };
     text += "     　　     ＊" + unixTime2jst(hourlyData.time, "mdh") + ":00＊\n";
-    text += "天気: " + hourlyData.summary + "\n";
+    text += "天気: " + hourlyData.summary + icon + "\n";
     text += "気温: " + Math.round(hourlyData.temperature * 10) / 10 + "℃\n";
     text += "降水確率: " + Math.round(hourlyData.precipProbability) + "%\n";
     text += "降水量: " + Math.round(hourlyData.precipIntensity * 10) / 10 + "mm/h\n";
@@ -59,6 +73,7 @@ function weatherInfo_afternoon() {
   var text = "";
   var dailyData = json["daily"]["data"][0];
   var hourlyData = json["hourly"]["data"][0];
+  var icon;
   
   text += "*【" + unixTime2jst(hourlyData.time, "mdh") + ":00 の 天気予報】*\n\n";
   text += "・今日の天気: " + dailyData.summary + "\n";
@@ -66,8 +81,21 @@ function weatherInfo_afternoon() {
   
   for(var i = 0; i < 9; i += 3){
     hourlyData = json["hourly"]["data"][i];
+    if(hourlyData.summary == "晴れ"){
+      icon = ":sunny:"
+    }else if(hourlyData.summary == "曇り"){
+      icon = ":cloud:"
+    }else if(hourlyData.summary == "薄曇り"){
+      icon = ":partly_sunny:"
+    }else if(hourlyData.summary == "曇"){
+      icon = ":cloud:"
+    }else if(hourlyData.summary == "雨"){
+      icon = ":umbrella:"
+    }else{
+      icon = ""
+    };
     text += "     　　     ＊" + unixTime2jst(hourlyData.time, "mdh") + ":00＊\n";
-    text += "天気: " + hourlyData.summary + "\n";
+    text += "天気: " + hourlyData.summary + icon + "\n";
     text += "気温: " + Math.round(hourlyData.temperature * 10) / 10 + "℃\n";
     text += "降水確率: " + Math.round(hourlyData.precipProbability) + "%\n";
     text += "降水量: " + Math.round(hourlyData.precipIntensity * 10) / 10 + "mm/h\n";
@@ -107,6 +135,7 @@ function weatherInfo_night() {
   var text = "";
   var dailyData = json["daily"]["data"][0];
   var hourlyData = json["hourly"]["data"][0];
+  var icon;
   
   text += "*【" + unixTime2jst(hourlyData.time, "mdh") + ":00 の 天気予報】*\n\n";
   text += "・今日の天気: " + dailyData.summary + "\n";
@@ -114,8 +143,21 @@ function weatherInfo_night() {
   
   for(var i = 0; i < 6; i += 3){
     hourlyData = json["hourly"]["data"][i];
+    if(hourlyData.summary == "晴れ"){
+      icon = ":sunny:"
+    }else if(hourlyData.summary == "曇り"){
+      icon = ":cloud:"
+    }else if(hourlyData.summary == "薄曇り"){
+      icon = ":partly_sunny:"
+    }else if(hourlyData.summary == "曇"){
+      icon = ":cloud:"
+    }else if(hourlyData.summary == "雨"){
+      icon = ":umbrella:"
+    }else{
+      icon = ""
+    };
     text += "     　　     ＊" + unixTime2jst(hourlyData.time, "mdh") + ":00＊\n";
-    text += "天気: " + hourlyData.summary + "\n";
+    text += "天気: " + hourlyData.summary + icon + "\n";
     text += "気温: " + Math.round(hourlyData.temperature * 10) / 10 + "℃\n";
     text += "降水確率: " + Math.round(hourlyData.precipProbability) + "%\n";
     text += "降水量: " + Math.round(hourlyData.precipIntensity * 10) / 10 + "mm/h\n";
