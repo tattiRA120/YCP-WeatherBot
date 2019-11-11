@@ -228,7 +228,7 @@ function setTrigger_weatherInfo_daytime() {
   if (isWeekday()) return;
   var setTime = new Date();
   setTime.setHours(12);
-  setTime.setMinutes(00);
+  setTime.setMinutes(35);
   ScriptApp.newTrigger('weatherInfo').timeBased().at(setTime).create();
 }
 
@@ -237,7 +237,7 @@ function setTrigger_weatherInfo_afternoon() {
   if (isWeekday()) return;
   var setTime = new Date();
   setTime.setHours(15);
-  setTime.setMinutes(00);
+  setTime.setMinutes(05);
   ScriptApp.newTrigger('weatherInfo_afternoon').timeBased().at(setTime).create();
 }
 
