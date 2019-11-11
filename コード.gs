@@ -11,6 +11,7 @@ function unixTime2jst(intTime, select){
   if(select == "mdh") return (month + "/" + day + " " + hour);
 };
 
+
 // 8・12時の天気情報送信
 function weatherInfo() {
   var url = "https://api.darksky.net/forecast/key/緯度,経度?lang=ja&units=si"
@@ -63,6 +64,7 @@ function weatherInfo() {
   // SlackのIncoming WebhookのURLを取得して入力
   UrlFetchApp.fetch("https://hooks.slack.com/services/********************", options);
 }
+
 
 //15時の天気情報送信
 function weatherInfo_afternoon() {
@@ -126,6 +128,7 @@ function weatherInfo_afternoon() {
   UrlFetchApp.fetch("https://hooks.slack.com/services/********************", options);
 }
 
+
 //18時の天気情報送信
 function weatherInfo_night() {
   var url = "https://api.darksky.net/forecast/key/緯度,経度?lang=ja&units=si"
@@ -165,7 +168,6 @@ function weatherInfo_night() {
     text += "-----------------------------------------\n";
   }
   
-  
   for(var i = 15; i < 21; i += 3){
     hourlyData = json["hourly"]["data"][i];
     text += "     　　     ＊" + unixTime2jst(hourlyData.time, "mdh") + ":00＊\n";
@@ -177,7 +179,6 @@ function weatherInfo_night() {
     text += "-----------------------------------------\n";
   }
 
-  
   var data={
     "text": text,
   };
@@ -210,7 +211,6 @@ function isWeekday(){
   }
   return false;
 }
-
 
 
 // トリガー作成
